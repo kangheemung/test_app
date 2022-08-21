@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TestApp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body>
+<% if session[:user_id]%>
+  <a href="/">Home</a>
+  <%= link_to "ユーザー一覧",users_path %>
+  <%= link_to "投稿一覧", root_path %>
+  <a href="/mypage">マイページ</a>
+  <%= link_to "ログアウト", "/logout", method: :delete %>
+<% else %>
+  <a href="/">Home</a>
+  <%= link_to '会員登録', signup_path %>
+  <a href="/login"> ログイン </a>
+ <% end %>
+  
+    <%= yield %>
+  </body>
+</html>

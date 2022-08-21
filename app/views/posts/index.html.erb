@@ -1,0 +1,26 @@
+
+<h1>Posts#index</h1>
+<p>Find me in app/views/posts/index.html.erb</p>
+<% if session[:user_id] %>
+    <%= form_for @post, url: posts_path do |f| %>
+    <%= f.label :title %><br/>
+    <%= f.text_field :title %><br/>
+    <%= f.label :body %><br/>
+    <%= f.text_field :body %><br/>
+    <%= f.submit %>
+    <% end %>
+    
+  <p><% @posts.each do |post|%>
+       <%=link_to post.title,"/post" %>|<%= post.updated_at %>|
+       <%=post.user.name%>さんの投稿<br>
+       <% end %></p>
+   
+<% else %>
+<p><% @posts.each do |post|%>
+  <%=link_to post.title,"/post" %>|<%= post.updated_at %>|
+  <%= post.user.name %>さんの投稿<br>
+  <% end %></p>
+<p> <%= link_to "ログイン","/login"%> </p>
+
+ 
+<% end %>
