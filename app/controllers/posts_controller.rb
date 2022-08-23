@@ -6,9 +6,9 @@ class PostsController < ApplicationController
   
 
  def show
-  
-   @post = Post.find_by(id: params[:id])
-  
+  #p params[:id]
+  @post = Post.find_by(id: params[:id])
+  @posts = Post.all
  end
  
  def create

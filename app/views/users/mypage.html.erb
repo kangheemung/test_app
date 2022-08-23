@@ -1,2 +1,9 @@
 <h1>Users#mypage</h1>
 <p>Find me in app/views/users/mypage.html.erb</p>
+
+<h1><%=current_user.name%>さんのマイページ</h1>
+<% @user.posts.each do |post|%>
+投稿タイトル:<%= post.title%><br/>
+投稿内容:<%= post.body %><br/>
+<%end%>
+  

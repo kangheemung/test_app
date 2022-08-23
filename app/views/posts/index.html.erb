@@ -11,13 +11,13 @@
     <% end %>
     
   <p><% @posts.each do |post|%>
-       <%=link_to post.title,"/post" %>|<%= post.updated_at %>|
+       <%=link_to post.title,"/posts/#{post.id}" %>|<%= post.updated_at %>|
        <%=post.user.name%>さんの投稿<br>
        <% end %></p>
    
 <% else %>
 <p><% @posts.each do |post|%>
-  <%=link_to post.title,"/post" %>|<%= post.updated_at %>|
+  <%=link_to post.title,"/posts/#{post.id}" %>|<%= post.updated_at %>|
   <%= post.user.name %>さんの投稿<br>
   <% end %></p>
 <p> <%= link_to "ログイン","/login"%> </p>

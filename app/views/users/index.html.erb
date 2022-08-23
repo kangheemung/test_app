@@ -1,2 +1,5 @@
-<h1>Users#index</h1>
+<h1>ユーザー一覧</h1>
 <p>Find me in app/views/users/index.html.erb</p>
+<%@users.each do |user|%>
+ <%=link_to user.name,"/users" %>さんの　|投稿数　<%=user.posts.count %><br>
+ <%end%>

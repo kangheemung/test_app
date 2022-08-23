@@ -15,11 +15,15 @@ class UsersController < ApplicationController
 
   end
   def index
-   @user = User.all
+    @user= User.new
+    @users = User.all
+    
+   
   end
   
   def mypage
     @user = User.find(session[:user_id])
+    @users = User.all
   end
   
   private

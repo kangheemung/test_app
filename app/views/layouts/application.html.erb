@@ -11,7 +11,7 @@
   <body>
 <% if session[:user_id]%>
   <a href="/">Home</a>
-  <%= link_to "ユーザー一覧",users_path %>
+  <%= link_to "ユーザー一覧","/users" %>
   <%= link_to "投稿一覧", root_path %>
   <a href="/mypage">マイページ</a>
   <%= link_to "ログアウト", "/logout", method: :delete %>

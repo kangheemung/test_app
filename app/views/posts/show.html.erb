@@ -1,0 +1,8 @@
+<br>
+
+<p>タイトル:<%= @post.title%> 
+<% @posts.each do |post|%>
+投稿者：<%= post.user.name%> 
+<% end %>
+投稿日時：<%=@post.updated_at%> 
+本文:<%= @post.body %> </p></br>

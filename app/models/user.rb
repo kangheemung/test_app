@@ -3,4 +3,8 @@ class User < ApplicationRecord
     def posts
         Post.where(user_id:self.id)
     end
+    
+   
+    
+   
 end
