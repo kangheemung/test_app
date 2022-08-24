@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   post 'users/create'=>'users#create',as: 'users'
   #ユーザ一覧
   get 'users'=>'users#index'
-  get 'posts/:id'=>'posts#show',as: 'show'
+  get 'posts/:id'=>'posts#show'
   
   
   
