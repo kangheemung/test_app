@@ -2,8 +2,9 @@
 <p>Find me in app/views/users/mypage.html.erb</p>
 
 <h1><%=current_user.name%>さんのマイページ</h1>
+<h2>今までの投稿一覧　<%= @user.posts.count %>件<br/></h2>
 <% @user.posts.each do |post|%>
-投稿タイトル:<%= post.title%><br/>
-投稿内容:<%= post.body %><br/>
+ <%= link_to post.title , "/posts/#{post.id}" %>
+ <%= post.updated_at %><br/>
 <%end%>
   
